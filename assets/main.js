@@ -8,6 +8,7 @@
      set `img` on the dish; cards fall back to the illustrated tile.
   --------------------------------------------------------------- */
   var DISHES = [
+
     { img: 'stuffed-peppers.jpg', emoji: '🫑', kcal: 385, p: 28, c: 26, f: 18,
       tags: ['high-protein', 'gluten-free', 'family'],
       en: { name: 'Stuffed Bell Peppers', sub: 'Peppers, seasoned beef & rice, baked',
@@ -80,30 +81,6 @@
             desc: 'Almôndegas de peru cozidas no molho de tomate. Com macarrão para as crianças, com folhas para os adultos.' },
       grad: ['#c2452a', '#7a2114'] },
 
-    { emoji: '🌿', kcal: 355, p: 33, c: 12, f: 20,
-      tags: ['high-protein', 'low-carb', 'gluten-free'],
-      en: { name: 'Chicken Pesto & Zucchini Noodles', sub: 'Herb pesto, spiralized zucchini',
-            desc: 'Grilled chicken with basil pesto over zucchini noodles. Light, and it holds up three days in the fridge.' },
-      pt: { name: 'Frango ao Pesto com Espaguete de Abobrinha', sub: 'Pesto de manjericão, abobrinha',
-            desc: 'Frango grelhado com pesto de manjericão sobre espaguete de abobrinha. Leve, e aguenta três dias na geladeira.' },
-      grad: ['#4f8b46', '#22421f'] },
-
-    { emoji: '🥕', kcal: 400, p: 16, c: 48, f: 16,
-      tags: ['veg', 'gluten-free'],
-      en: { name: 'Roasted Vegetable & Chickpea Bowl', sub: 'Seasonal vegetables, tahini',
-            desc: 'Whatever roasts well that week with chickpeas, herbs and a lemon-tahini dressing.' },
-      pt: { name: 'Bowl de Legumes Assados com Grão-de-Bico', sub: 'Legumes da estação, tahine',
-            desc: 'O que estiver bom para assar na semana, com grão-de-bico, ervas e molho de tahine com limão.' },
-      grad: ['#d99a3c', '#8a5511'] },
-
-    { emoji: '🦐', kcal: 330, p: 34, c: 11, f: 15,
-      tags: ['high-protein', 'low-carb', 'gluten-free'],
-      en: { name: 'Garlic Lime Shrimp', sub: 'Shrimp, cauliflower rice, cilantro',
-            desc: 'Shrimp cooked fast with garlic, lime and cilantro over cauliflower rice.' },
-      pt: { name: 'Camarão ao Alho e Limão', sub: 'Camarão, arroz de couve-flor, coentro',
-            desc: 'Camarão salteado rápido com alho, limão e coentro sobre arroz de couve-flor.' },
-      grad: ['#f0a08a', '#c2452a'] },
-
     { emoji: '🍫', kcal: 145, p: 3, c: 20, f: 6,
       tags: ['dessert', 'brazilian', 'veg', 'gluten-free', 'family'],
       en: { name: 'Brigadeiro', sub: 'The Brazilian chocolate truffle',
@@ -118,23 +95,7 @@
             desc: 'Condensed milk flan with a dark caramel top. Made the night before, because it needs to sit.' },
       pt: { name: 'Pudim de Leite', sub: 'Pudim de leite condensado com calda',
             desc: 'Pudim de leite condensado com calda escura. Feito na véspera, porque precisa descansar.' },
-      grad: ['#e0a940', '#a06a12'] },
-
-    { emoji: '🍎', kcal: 290, p: 4, c: 44, f: 11,
-      tags: ['dessert', 'veg', 'family'],
-      en: { name: 'Fruit Crumble', sub: 'Seasonal fruit, oat topping',
-            desc: 'Whatever fruit is best that week under an oat and butter crumble. Dessert that also works for breakfast.' },
-      pt: { name: 'Crumble de Frutas', sub: 'Fruta da estação, farofa de aveia',
-            desc: 'A fruta que estiver melhor na semana sob uma farofa de aveia e manteiga. Sobremesa que também serve de café da manhã.' },
-      grad: ['#c9713f', '#8a4418'] },
-
-    { emoji: '🥣', kcal: 320, p: 14, c: 46, f: 9,
-      tags: ['veg', 'family'],
-      en: { name: 'Overnight Oats with Fruit', sub: 'Breakfast, ready in the fridge',
-            desc: 'Oats soaked with milk or a plant alternative, topped with seasonal fruit. Made in jars so mornings take ten seconds.' },
-      pt: { name: 'Aveia de Um Dia para o Outro', sub: 'Café da manhã pronto na geladeira',
-            desc: 'Aveia hidratada em leite ou bebida vegetal, com fruta da estação. Em potinhos, para a manhã levar dez segundos.' },
-      grad: ['#c9b18a', '#8a7048'] }
+      grad: ['#e0a940', '#a06a12'] }
   ];
 
   /* ---------------- translations (English lives in the HTML) ---------------- */
@@ -145,24 +106,25 @@
 
     'hero.eyebrow': 'Chef particular · Santa Monica',
     'hero.h1': 'A comida fresca e saudável da sua família — feita na <em>sua</em> cozinha.',
-    'hero.lede': 'Comida brasileira, mediterrânea, o dia a dia da família e sobremesas que valem ficar à mesa. Eu planejo a semana do jeito que a sua casa come de verdade, faço as compras na manhã do dia, cozinho na sua cozinha e deixo tudo porcionado, etiquetado e guardado.',
+    'hero.lede': 'Comida brasileira, o clássico americano do dia a dia, e comida que as crianças comem de verdade. Eu planejo a semana do jeito que a sua casa come, faço as compras na manhã do dia, cozinho na sua cozinha e deixo tudo porcionado, etiquetado e guardado.',
     'hero.call': 'Ligue (310) 425-6872', 'hero.menu': 'Ver o cardápio',
-    'hero.s1t': 'Bacharel em Nutrição', 'hero.s1d': 'Ciência de Alimentos e Nutrição, São Paulo',
+    'hero.s1t': 'Bacharel em Nutrição', 'hero.s1d': 'Ciência de Alimentos e Nutrição, São Paulo, Brasil',
     'hero.s2t': 'Na sua cozinha', 'hero.s2d': 'Feito na hora, não entregue pronto',
     'hero.s3t': 'LA e Orange County', 'hero.s3d': 'Casas particulares e eventos',
     'hero.badge': 'Chef particular · Bacharel em Ciência de Alimentos e Nutrição',
 
-    'strip.1': 'Marmitas da semana', 'strip.2': 'Brasileira e internacional',
-    'strip.3': 'Do prato à sobremesa', 'strip.4': 'Jantares e eventos',
+    'strip.1': 'Marmitas da semana', 'strip.2': 'Brasileira e americana',
+    'strip.3': 'Comida para as crianças', 'strip.4': 'Jantares e eventos',
     'strip.5': 'Referências disponíveis',
 
     'about.caption': 'Jackie Wheeler · São Paulo → Santa Monica',
     'about.eyebrow': 'Oi, eu sou a Jackie',
     'about.h2': 'Brasileira de formação, mas eu cozinho o que a sua família ama.',
     'about.p1': 'Sou a Jackie Wheeler. Me formei no Brasil e sou bacharel em Ciência de Alimentos e Nutrição pela Universidade Anhembi Morumbi, em São Paulo, com curso de gestão da qualidade e controle de higiene de alimentos.',
-    'about.p2': 'Cresci com feijão, moqueca e pão de queijo, e faço tudo isso. Mas na maioria das semanas eu estou fazendo pratos mediterrâneos, frango assado com legumes, massa que as crianças realmente comem e sobremesa na sexta. Do prato principal à sobremesa, o que a casa estiver a fim.',
+    'about.p2': 'Cresci com feijão, moqueca e pão de queijo, e faço tudo isso. Mas na maioria das semanas é frango assado com legumes, pimentão recheado, massa, lancheira para a escola e algo doce na sexta — comida americana do dia a dia tanto quanto brasileira, o que a casa come de verdade.',
     'about.p3': 'Hoje eu cozinho toda semana para famílias particulares em Los Angeles e Orange County — incluindo atletas profissionais e pessoas públicas — e atendo jantares, festas e eventos quando a casa recebe.',
-    'about.c1': 'Cardápios adaptados a restrições, alergias e preferências',
+    'about.c1': 'Cozinho para a família inteira — inclusive as crianças, inclusive quem é enjoado',
+    'about.c1b': 'Cardápios adaptados a restrições, alergias e preferências',
     'about.c2': 'Tudo porcionado em potes individuais e etiquetado',
     'about.c3': 'Acompanho a geladeira e a despensa para desperdiçar menos',
     'about.c4': 'Cursando formação complementar em cozinha vegana',
@@ -190,24 +152,24 @@
     'svc.2k': 'Ocasiões', 'svc.2t': 'Jantares, festas e eventos',
     'svc.2p': 'Quando você recebe, eu monto o cardápio, cozinho, empratado, e cuido do serviço para você ficar com os convidados.',
     'svc.2a': 'Cardápio pensado para a ocasião e para os convidados',
-    'svc.2b': 'Brasileira, mediterrânea, ou o que combinar com a noite',
+    'svc.2b': 'Brasileira, americana, ou o que combinar com a noite',
     'svc.2c': 'Sobremesas feitas do zero',
     'svc.2d': 'Empratamento, serviço à mesa e sugestões de vinho',
     'svc.3k': 'A parte nutricional', 'svc.3t': 'Comer com um objetivo',
     'svc.3p': 'Treino, uma condição de saúde, crianças em fase de crescimento, ou só cansaço de pensar nisso — o cardápio se ajusta ao objetivo.',
     'svc.3a': 'Alergias e restrições tratadas de verdade, não contornadas',
-    'svc.3b': 'Porções do tamanho de quem realmente vai comer',
+    'svc.3b': 'Porções do tamanho de quem vai comer, adultos e crianças',
     'svc.3c': 'Informação nutricional de qualquer prato, quando pedir',
     'svc.3d': 'Produtos da estação e orgânicos onde faz diferença',
 
     'menu.eyebrow': 'Cardápio e nutrição', 'menu.h2': 'Uma semana de exemplo, com os números',
-    'menu.lede': 'Pratos que eu faço com frequência, brasileiros e não brasileiros. Filtre pelo jeito que a sua casa come — cada prato mostra o que tem em uma porção.',
+    'menu.lede': 'Alguns pratos que eu faço com frequência, brasileiros e americanos. A sua semana é montada em cima do que a sua família gosta — isto aqui é só uma amostra. Cada prato mostra o que tem em uma porção.',
     'menu.empty': 'Nada corresponde a esse filtro — tente outro.',
     'menu.fineprint': '<strong>Sobre estes números:</strong> os valores nutricionais são estimativas por porção, calculadas a partir de pesos de receita padrão e arredondadas. Suas porções exatas são definidas quando planejamos a sua semana, e a Jackie fornece valores precisos e a lista completa de ingredientes de qualquer prato que ela cozinhar para você.',
 
     'filter.all': 'Tudo', 'filter.high-protein': 'Rico em proteína', 'filter.low-carb': 'Baixo carboidrato',
     'filter.veg': 'Vegetariano', 'filter.brazilian': 'Brasileiro', 'filter.dessert': 'Sobremesas',
-    'filter.family': 'Favoritos da família',
+    'filter.family': 'As crianças amam',
 
     'how.eyebrow': 'Como funciona', 'how.h2': 'Da primeira ligação à geladeira cheia',
     'how.1t': 'A gente conversa', 'how.1p': 'Quantas pessoas, do que gostam, o que não podem comer, quais dias pesam mais.',
@@ -237,10 +199,10 @@
   var TAG_LABELS = {
     en: { 'high-protein': 'High protein', 'low-carb': 'Low carb', 'veg': 'Vegetarian',
           'gluten-free': 'Gluten free', 'brazilian': 'Brazilian', 'dessert': 'Dessert',
-          'family': 'Family favorite' },
+          'family': 'Kid favorite' },
     pt: { 'high-protein': 'Rico em proteína', 'low-carb': 'Baixo carboidrato', 'veg': 'Vegetariano',
           'gluten-free': 'Sem glúten', 'brazilian': 'Brasileiro', 'dessert': 'Sobremesa',
-          'family': 'Favorito da família' }
+          'family': 'Favorito das crianças' }
   };
 
   var MACRO_LABELS = {
