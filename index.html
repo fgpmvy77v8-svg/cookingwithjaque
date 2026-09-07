@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Meals by Chef Jackie — Personal Chef in Los Angeles</title>
-<meta name="description" content="Chef Jackie is a Brazilian personal chef in Santa Monica with a B.S. in Food and Nutrition. Fresh, healthy weekly meals cooked in your own kitchen, across LA and Orange County.">
-<meta property="og:title" content="Meals by Chef Jackie — Personal Chef in Los Angeles">
-<meta property="og:description" content="Your family's fresh, healthy meals, cooked in your own kitchen. Weekly meal prep and private dinners across LA and Orange County.">
+<title>Chef Jackie — Personal Chef in Los Angeles</title>
+<meta name="description" content="Chef Jackie Wheeler is a personal chef in Santa Monica with a B.S. in Food and Nutrition. Fresh, healthy meals cooked in your own kitchen across LA and Orange County — Brazilian, Mediterranean, everyday family food and desserts.">
+<meta property="og:title" content="Chef Jackie — Personal Chef in Los Angeles">
+<meta property="og:description" content="Your family's fresh, healthy meals, cooked in your own kitchen. Weekly meal prep, dinners and events across LA and Orange County.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,19 +16,25 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
 <header class="site-header" id="top">
   <div class="wrap header-inner">
-    <a class="brand" href="#top">Meals by Chef <em>Jackie</em></a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="brand" href="#top">Chef <em>Jackie</em></a>
+    <div class="header-actions">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="pt" aria-pressed="false">PT</button>
+      </div>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
     <nav id="nav" class="nav">
-      <a href="#about">About Jackie</a>
-      <a href="#services">What's included</a>
-      <a href="#menu">Menu &amp; nutrition</a>
-      <a href="#contact" class="btn btn-sm">Get in touch</a>
+      <a href="#about" data-i18n="nav.about">About Jackie</a>
+      <a href="#services" data-i18n="nav.services">What's included</a>
+      <a href="#menu" data-i18n="nav.menu">Menu &amp; nutrition</a>
+      <a href="#contact" class="btn btn-sm" data-i18n="nav.contact">Get in touch</a>
     </nav>
   </div>
 </header>
@@ -39,26 +45,26 @@
   <section class="hero">
     <div class="wrap hero-inner">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Personal chef · Santa Monica</p>
-        <h1>Your family's fresh, healthy meals — cooked in <em>your</em> kitchen.</h1>
-        <p class="lede">I plan the week around how your household actually eats, shop for it that morning, cook it in your kitchen, and leave everything portioned, labeled and put away.</p>
+        <p class="eyebrow" data-i18n="hero.eyebrow">Personal chef · Santa Monica</p>
+        <h1 data-i18n="hero.h1">Your family's fresh, healthy meals — cooked in <em>your</em> kitchen.</h1>
+        <p class="lede" data-i18n="hero.lede">Brazilian home cooking, Mediterranean, everyday family food, and desserts worth staying at the table for. I plan the week around how your household actually eats, shop that morning, cook in your kitchen, and leave everything portioned, labeled and put away.</p>
         <div class="hero-actions">
-          <a href="tel:+13104256872" class="btn">Call (310) 425-6872</a>
-          <a href="#menu" class="btn btn-ghost">See the menu</a>
+          <a href="tel:+13104256872" class="btn" data-i18n="hero.call">Call (310) 425-6872</a>
+          <a href="#menu" class="btn btn-ghost" data-i18n="hero.menu">See the menu</a>
         </div>
         <ul class="hero-stats">
-          <li><strong>B.S. Nutrition</strong><span>Food &amp; Nutrition degree, São Paulo</span></li>
-          <li><strong>In your kitchen</strong><span>Cooked fresh, not delivered</span></li>
-          <li><strong>LA &amp; Orange County</strong><span>Currently cooking for private households</span></li>
+          <li><strong data-i18n="hero.s1t">B.S. Nutrition</strong><span data-i18n="hero.s1d">Food &amp; Nutrition degree, São Paulo</span></li>
+          <li><strong data-i18n="hero.s2t">In your kitchen</strong><span data-i18n="hero.s2d">Cooked fresh, not delivered</span></li>
+          <li><strong data-i18n="hero.s3t">LA &amp; Orange County</strong><span data-i18n="hero.s3d">Private households and events</span></li>
         </ul>
       </div>
       <div class="hero-photo reveal">
         <figure>
-          <img src="assets/img/jackie.jpg" alt="Chef Jackie preparing a meal in a client's kitchen" width="410" height="680">
+          <img src="assets/img/jackie.jpg" alt="Chef Jackie Wheeler preparing a meal in a client's kitchen" width="410" height="680">
         </figure>
         <div class="photo-badge">
-          <strong>Jaqueline Wheeler</strong>
-          <small>Private chef · Bachelor of Science in Food and Nutrition</small>
+          <strong>Jackie Wheeler</strong>
+          <small data-i18n="hero.badge">Personal chef · Bachelor of Science in Food and Nutrition</small>
         </div>
       </div>
     </div>
@@ -67,11 +73,11 @@
   <div class="strip">
     <div class="wrap">
       <ul>
-        <li>Weekly meal prep</li>
-        <li>Seasonal &amp; organic</li>
-        <li>Dietary needs</li>
-        <li>Dinners &amp; events</li>
-        <li>References available</li>
+        <li data-i18n="strip.1">Weekly meal prep</li>
+        <li data-i18n="strip.2">Brazilian &amp; international</li>
+        <li data-i18n="strip.3">Entrées to desserts</li>
+        <li data-i18n="strip.4">Dinners &amp; events</li>
+        <li data-i18n="strip.5">References available</li>
       </ul>
     </div>
   </div>
@@ -81,22 +87,23 @@
     <div class="wrap grid-2">
       <figure class="portrait reveal">
         <div class="portrait-frame">
-          <img src="assets/img/jackie.jpg" alt="Chef Jackie slicing vegetables at a kitchen counter" loading="lazy"
+          <img src="assets/img/jackie.jpg" alt="Chef Jackie Wheeler slicing vegetables at a kitchen counter" loading="lazy"
                onerror="this.closest('.portrait-frame').classList.add('is-placeholder'); this.remove();">
           <div class="portrait-fallback" aria-hidden="true"><span>Add <code>assets/img/jackie.jpg</code></span></div>
         </div>
-        <figcaption class="portrait-caption">Chef Jackie · São Paulo → Santa Monica</figcaption>
+        <figcaption class="portrait-caption" data-i18n="about.caption">Jackie Wheeler · São Paulo → Santa Monica</figcaption>
       </figure>
       <div class="reveal">
-        <p class="eyebrow">Oi, I'm Jackie</p>
-        <h2>A cook from São Paulo who studied the nutrition side too.</h2>
-        <p>I'm Jaqueline — everyone calls me Jackie. I trained in Brazil and hold a Bachelor of Science in Food and Nutrition from Universidade Anhembi Morumbi in São Paulo, along with coursework in food quality management and hygiene control.</p>
-        <p>That's why I cook the way I do: seasonal, organic where it counts, built around what each household needs rather than one menu for everybody. Right now I cook weekly for private families across Los Angeles and Orange County, and I work dinners, parties and events alongside other chefs when a household is entertaining.</p>
+        <p class="eyebrow" data-i18n="about.eyebrow">Oi, I'm Jackie</p>
+        <h2 data-i18n="about.h2">Brazilian by training, but I'll cook whatever your family loves.</h2>
+        <p data-i18n="about.p1">I'm Jackie Wheeler. I trained in Brazil and hold a Bachelor of Science in Food and Nutrition from Universidade Anhembi Morumbi in São Paulo, with coursework in food quality management and hygiene control.</p>
+        <p data-i18n="about.p2">I grew up on feijão, moqueca and pão de queijo, and I cook all of it. But most weeks I'm making Mediterranean plates, roasted chicken and vegetables, pasta the kids will actually eat, and dessert for Friday. Entrées to desserts, whatever the household is in the mood for.</p>
+        <p data-i18n="about.p3">Today I cook weekly for private families across Los Angeles and Orange County — including professional athletes and public figures — and I work dinners, parties and events when a household is entertaining.</p>
         <ul class="checks">
-          <li>Menus tailored to dietary needs, allergies and preferences</li>
-          <li>Everything portioned into individual containers and labeled</li>
-          <li>I track what's in your fridge and pantry so less food gets thrown out</li>
-          <li>Currently completing additional coursework in vegan cuisine</li>
+          <li data-i18n="about.c1">Menus tailored to dietary needs, allergies and preferences</li>
+          <li data-i18n="about.c2">Everything portioned into individual containers and labeled</li>
+          <li data-i18n="about.c3">I track your fridge and pantry so less food gets thrown out</li>
+          <li data-i18n="about.c4">Currently completing additional coursework in vegan cuisine</li>
         </ul>
       </div>
     </div>
@@ -106,29 +113,29 @@
   <section class="section section-tint">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">Training</p>
-        <h2>Where the nutrition part comes from</h2>
+        <p class="eyebrow" data-i18n="cred.eyebrow">Training</p>
+        <h2 data-i18n="cred.h2">Where the nutrition part comes from</h2>
       </div>
       <div class="creds reveal">
         <div class="cred">
           <span class="cred-year">2009</span>
-          <h3>B.S., Food and Nutrition</h3>
-          <p>Universidade Anhembi Morumbi, São Paulo, Brazil</p>
+          <h3 data-i18n="cred.1t">B.S., Food and Nutrition</h3>
+          <p data-i18n="cred.1d">Universidade Anhembi Morumbi, São Paulo, Brazil</p>
         </div>
         <div class="cred">
-          <span class="cred-year">Coursework</span>
-          <h3>Food Quality Management &amp; Hygiene Control</h3>
-          <p>Safe handling, storage and labeling in a home kitchen</p>
+          <span class="cred-year" data-i18n="cred.2y">Coursework</span>
+          <h3 data-i18n="cred.2t">Food Quality Management &amp; Hygiene Control</h3>
+          <p data-i18n="cred.2d">Safe handling, storage and labeling in a home kitchen</p>
         </div>
         <div class="cred">
-          <span class="cred-year">In progress</span>
-          <h3>Vegan Cuisine</h3>
-          <p>Currently enrolled — plant-based menus without the guesswork</p>
+          <span class="cred-year" data-i18n="cred.3y">In progress</span>
+          <h3 data-i18n="cred.3t">Vegan Cuisine</h3>
+          <p data-i18n="cred.3d">Currently enrolled — plant-based menus without the guesswork</p>
         </div>
         <div class="cred">
-          <span class="cred-year">Also</span>
-          <h3>Wine &amp; coffee</h3>
-          <p>Del Vino Wine Club School · Best Coffee Xperience barista essentials</p>
+          <span class="cred-year" data-i18n="cred.4y">Also</span>
+          <h3 data-i18n="cred.4t">Wine &amp; coffee</h3>
+          <p data-i18n="cred.4d">Del Vino Wine Club School · Best Coffee Xperience barista essentials</p>
         </div>
       </div>
     </div>
@@ -138,72 +145,73 @@
   <section id="services" class="section">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">What's included</p>
-        <h2>One cook day, a week of meals</h2>
-        <p class="lede">Most families book a weekly session. Every household is different, so pricing is quoted after we talk — call and tell me how many people I'm cooking for.</p>
+        <p class="eyebrow" data-i18n="svc.eyebrow">What's included</p>
+        <h2 data-i18n="svc.h2">One cook day, a week of meals</h2>
+        <p class="lede" data-i18n="svc.lede">Most families book a weekly session. Every household is different, so pricing is quoted after we talk — call and tell me how many people I'm cooking for.</p>
       </div>
       <div class="cards">
         <article class="card card-lead reveal">
-          <span class="card-kicker">Most families book this</span>
-          <h3>Weekly meal prep</h3>
-          <p>One session in your kitchen covers the week. Here's exactly what happens:</p>
+          <span class="card-kicker" data-i18n="svc.1k">Most families book this</span>
+          <h3 data-i18n="svc.1t">Weekly meal prep</h3>
+          <p data-i18n="svc.1p">One session in your kitchen covers the week. Here's exactly what happens:</p>
           <ol>
-            <li>I suggest a balanced weekly menu for your household</li>
-            <li>I shop that morning for fresh, carefully selected ingredients</li>
-            <li>I cook the week's meals in your kitchen</li>
-            <li>Everything is portioned into individual containers and labeled</li>
-            <li>I organize it all in the fridge so it's obvious what to grab</li>
-            <li>I clean the kitchen before I leave</li>
+            <li data-i18n="svc.1a">I suggest a balanced weekly menu for your household</li>
+            <li data-i18n="svc.1b">I shop that morning for fresh, carefully selected ingredients</li>
+            <li data-i18n="svc.1c">I cook the week's meals in your kitchen</li>
+            <li data-i18n="svc.1d">Everything is portioned into individual containers and labeled</li>
+            <li data-i18n="svc.1e">I organize it all in the fridge so it's obvious what to grab</li>
+            <li data-i18n="svc.1f">I clean the kitchen before I leave</li>
           </ol>
         </article>
         <article class="card reveal">
-          <span class="card-kicker">Occasions</span>
-          <h3>Dinners, parties &amp; events</h3>
-          <p>When you're hosting, I plan the menu, cook and plate it, and handle service so you can stay with your guests.</p>
+          <span class="card-kicker" data-i18n="svc.2k">Occasions</span>
+          <h3 data-i18n="svc.2t">Dinners, parties &amp; events</h3>
+          <p data-i18n="svc.2p">When you're hosting, I plan the menu, cook and plate it, and handle service so you can stay with your guests.</p>
           <ul>
-            <li>Menus built for the occasion and the guest list</li>
-            <li>Plating and table service</li>
-            <li>Experience assisting head chefs at private events across LA</li>
-            <li>Wine pairing suggestions on request</li>
+            <li data-i18n="svc.2a">Menus built for the occasion and the guest list</li>
+            <li data-i18n="svc.2b">Brazilian, Mediterranean, or whatever suits the evening</li>
+            <li data-i18n="svc.2c">Desserts made from scratch</li>
+            <li data-i18n="svc.2d">Plating, table service and wine suggestions</li>
           </ul>
         </article>
         <article class="card reveal">
-          <span class="card-kicker">The nutrition side</span>
-          <h3>Eating for a goal</h3>
-          <p>Training, managing a health condition, feeding growing kids, or just tired of thinking about it — the menu adjusts to the goal.</p>
+          <span class="card-kicker" data-i18n="svc.3k">The nutrition side</span>
+          <h3 data-i18n="svc.3t">Eating for a goal</h3>
+          <p data-i18n="svc.3p">Training, managing a health condition, feeding growing kids, or just tired of thinking about it — the menu adjusts to the goal.</p>
           <ul>
-            <li>Allergies and restrictions handled properly, not worked around</li>
-            <li>Portions matched to who's actually eating</li>
-            <li>Nutrition breakdowns for any dish, on request</li>
-            <li>Seasonal and organic produce where it makes a difference</li>
+            <li data-i18n="svc.3a">Allergies and restrictions handled properly, not worked around</li>
+            <li data-i18n="svc.3b">Portions matched to who's actually eating</li>
+            <li data-i18n="svc.3c">Nutrition breakdowns for any dish, on request</li>
+            <li data-i18n="svc.3d">Seasonal and organic produce where it makes a difference</li>
           </ul>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- MENU & NUTRITION -->
+  <!-- MENU -->
   <section id="menu" class="section section-tint">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">Menu &amp; nutrition</p>
-        <h2>A sample week, with the numbers</h2>
-        <p class="lede">Dishes I cook regularly. Filter by how your household eats — every dish shows what's in a serving.</p>
+        <p class="eyebrow" data-i18n="menu.eyebrow">Menu &amp; nutrition</p>
+        <h2 data-i18n="menu.h2">A sample week, with the numbers</h2>
+        <p class="lede" data-i18n="menu.lede">Dishes I cook regularly, Brazilian and otherwise. Filter by how your household eats — every dish shows what's in a serving.</p>
       </div>
 
       <div class="filters reveal" role="group" aria-label="Filter dishes">
-        <button class="chip is-active" data-filter="all">Everything</button>
-        <button class="chip" data-filter="high-protein">High protein</button>
-        <button class="chip" data-filter="low-carb">Low carb</button>
-        <button class="chip" data-filter="veg">Vegetarian</button>
-        <button class="chip" data-filter="gluten-free">Gluten free</button>
-        <button class="chip" data-filter="family">Family favorites</button>
+        <button class="chip is-active" data-filter="all" data-i18n="filter.all">Everything</button>
+        <button class="chip" data-filter="high-protein" data-i18n="filter.high-protein">High protein</button>
+        <button class="chip" data-filter="low-carb" data-i18n="filter.low-carb">Low carb</button>
+        <button class="chip" data-filter="veg" data-i18n="filter.veg">Vegetarian</button>
+        <button class="chip" data-filter="brazilian" data-i18n="filter.brazilian">Brazilian</button>
+        <button class="chip" data-filter="dessert" data-i18n="filter.dessert">Desserts</button>
+        <button class="chip" data-filter="family" data-i18n="filter.family">Family favorites</button>
       </div>
 
       <div class="gallery" id="galleryGrid"></div>
-      <p class="gallery-empty" id="galleryEmpty" hidden>Nothing matches that filter — try another.</p>
+      <p class="gallery-empty" id="galleryEmpty" hidden data-i18n="menu.empty">Nothing matches that filter — try another.</p>
 
-      <p class="fineprint"><strong>About these numbers:</strong> nutrition values are estimates per serving, calculated from standard recipe weights and rounded. Your exact portions are set when we plan your week, and Jackie can provide precise values and full ingredient lists for any dish she cooks for you.</p>
+      <p class="fineprint" data-i18n-html="menu.fineprint"><strong>About these numbers:</strong> nutrition values are estimates per serving, calculated from standard recipe weights and rounded. Your exact portions are set when we plan your week, and Jackie can provide precise values and full ingredient lists for any dish she cooks for you.</p>
     </div>
   </section>
 
@@ -211,14 +219,14 @@
   <section class="section section-dark">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">How it works</p>
-        <h2>From first call to a full fridge</h2>
+        <p class="eyebrow" data-i18n="how.eyebrow">How it works</p>
+        <h2 data-i18n="how.h2">From first call to a full fridge</h2>
       </div>
       <ol class="steps">
-        <li class="reveal"><span class="step-n">1</span><h3>We talk</h3><p>How many people, what they like, what they can't eat, which days matter most.</p></li>
-        <li class="reveal"><span class="step-n">2</span><h3>I send a menu</h3><p>A proposed week for your household. Swap anything you don't want before I shop.</p></li>
-        <li class="reveal"><span class="step-n">3</span><h3>Cook day</h3><p>I shop in the morning, cook in your kitchen, label everything, and clean up.</p></li>
-        <li class="reveal"><span class="step-n">4</span><h3>We adjust</h3><p>Portions, flavors, repeats — tell me what worked and next week shifts.</p></li>
+        <li class="reveal"><span class="step-n">1</span><h3 data-i18n="how.1t">We talk</h3><p data-i18n="how.1p">How many people, what they like, what they can't eat, which days matter most.</p></li>
+        <li class="reveal"><span class="step-n">2</span><h3 data-i18n="how.2t">I send a menu</h3><p data-i18n="how.2p">A proposed week for your household. Swap anything you don't want before I shop.</p></li>
+        <li class="reveal"><span class="step-n">3</span><h3 data-i18n="how.3t">Cook day</h3><p data-i18n="how.3p">I shop in the morning, cook in your kitchen, label everything, and clean up.</p></li>
+        <li class="reveal"><span class="step-n">4</span><h3 data-i18n="how.4t">We adjust</h3><p data-i18n="how.4p">Portions, flavors, repeats — tell me what worked and next week shifts.</p></li>
       </ol>
     </div>
   </section>
@@ -227,13 +235,13 @@
   <section class="section">
     <div class="wrap refs">
       <div class="reveal">
-        <p class="eyebrow">References</p>
-        <h2>Ask the families I cook for</h2>
-        <p class="lede">I've cooked weekly for private households in Orange County and Los Angeles since 2024, and assisted at private dinners and events in West Hollywood.</p>
+        <p class="eyebrow" data-i18n="ref.eyebrow">References</p>
+        <h2 data-i18n="ref.h2">Ask the families I cook for</h2>
+        <p class="lede" data-i18n="ref.lede">I've cooked weekly for private households in Los Angeles and Orange County since 2024, and assisted at private dinners and events in West Hollywood.</p>
       </div>
       <div class="refs-note reveal">
-        <p><strong>Plenty of references available.</strong> If you'd like to speak with a family I currently cook for, ask when we talk and I'll put you in touch.</p>
-        <p>The best way to know if this is a fit is a conversation — tell me about your household and I'll tell you honestly whether I'm the right chef for it.</p>
+        <p data-i18n-html="ref.n1"><strong>Plenty of references available.</strong> If you'd like to speak with a family I currently cook for, ask when we talk and I'll put you in touch.</p>
+        <p data-i18n="ref.n2">The best way to know if this is a fit is a conversation — tell me about your household and I'll tell you honestly whether I'm the right chef for it.</p>
       </div>
     </div>
   </section>
@@ -242,39 +250,39 @@
   <section id="contact" class="section section-tint">
     <div class="wrap grid-2 contact-grid">
       <div class="reveal">
-        <p class="eyebrow">Get in touch</p>
-        <h2>Let's plan your first week</h2>
-        <p class="lede">Call or text — that's usually fastest. Or leave your details and I'll get back to you.</p>
+        <p class="eyebrow" data-i18n="contact.eyebrow">Get in touch</p>
+        <h2 data-i18n="contact.h2">Let's plan your first week</h2>
+        <p class="lede" data-i18n="contact.lede">Call or text — that's usually fastest. Or leave your details and I'll get back to you.</p>
         <ul class="contact-list">
           <li><span aria-hidden="true">📱</span><a href="tel:+13104256872">(310) 425-6872</a></li>
           <li><span aria-hidden="true">✉️</span><a href="mailto:jaquelvalenca@icloud.com">jaquelvalenca@icloud.com</a></li>
           <li><span aria-hidden="true">📸</span><a href="https://instagram.com/personal_chef_jackie" rel="noopener">@personal_chef_jackie</a></li>
-          <li><span aria-hidden="true">📍</span>Based in Santa Monica — cooking across Los Angeles and Orange County</li>
+          <li><span aria-hidden="true">📍</span><span data-i18n="contact.area">Based in Santa Monica — cooking across Los Angeles and Orange County</span></li>
         </ul>
       </div>
       <form class="form reveal" id="bookingForm" novalidate>
         <div class="field">
-          <label for="name">Name</label>
+          <label for="name" data-i18n="form.name">Name</label>
           <input id="name" name="name" type="text" autocomplete="name" required>
         </div>
         <div class="field">
-          <label for="email">Email</label>
+          <label for="email" data-i18n="form.email">Email</label>
           <input id="email" name="email" type="email" autocomplete="email" required>
         </div>
         <div class="field">
-          <label for="service">What do you need?</label>
+          <label for="service" data-i18n="form.service">What do you need?</label>
           <select id="service" name="service">
-            <option>Weekly meal prep</option>
-            <option>A dinner or party</option>
-            <option>Both</option>
-            <option>Not sure yet</option>
+            <option data-i18n="form.o1">Weekly meal prep</option>
+            <option data-i18n="form.o2">A dinner or party</option>
+            <option data-i18n="form.o3">Both</option>
+            <option data-i18n="form.o4">Not sure yet</option>
           </select>
         </div>
         <div class="field">
-          <label for="notes">Tell me about your household</label>
-          <textarea id="notes" name="notes" rows="4" placeholder="How many people, any allergies or restrictions, your neighborhood…"></textarea>
+          <label for="notes" data-i18n="form.notes">Tell me about your household</label>
+          <textarea id="notes" name="notes" rows="4" data-i18n-ph="form.ph" placeholder="How many people, any allergies or restrictions, your neighborhood…"></textarea>
         </div>
-        <button class="btn btn-block" type="submit">Send</button>
+        <button class="btn btn-block" type="submit" data-i18n="form.send">Send</button>
         <p class="form-note" id="formNote" role="status"></p>
       </form>
     </div>
@@ -284,12 +292,12 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p class="footer-brand">Meals by Chef <em>Jackie</em></p>
-    <p class="footer-tag">Personal chef · Santa Monica, Los Angeles &amp; Orange County</p>
+    <p class="footer-brand">Chef <em>Jackie</em></p>
+    <p class="footer-tag" data-i18n="footer.tag">Personal chef · Santa Monica, Los Angeles &amp; Orange County</p>
     <nav class="footer-nav">
-      <a href="#about">About</a><a href="#services">What's included</a><a href="#menu">Menu</a><a href="tel:+13104256872">(310) 425-6872</a>
+      <a href="#about" data-i18n="footer.about">About</a><a href="#services" data-i18n="footer.svc">What's included</a><a href="#menu" data-i18n="footer.menu">Menu</a><a href="tel:+13104256872">(310) 425-6872</a>
     </nav>
-    <p class="footer-legal">&copy; <span id="year"></span> Jaqueline Wheeler. Feito com carinho.</p>
+    <p class="footer-legal">&copy; <span id="year"></span> Jackie Wheeler. <span data-i18n="footer.love">Feito com carinho.</span></p>
   </div>
 </footer>
 
