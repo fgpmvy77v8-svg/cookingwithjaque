@@ -1,4 +1,4 @@
-/* Cooking with Jaque — site interactions */
+/* Chef Jackie — site interactions */
 (function () {
   'use strict';
 
@@ -234,7 +234,7 @@
         'Service: ' + document.getElementById('service').value + '\n\n' +
         document.getElementById('notes').value.trim()
       );
-      window.location.href = 'mailto:hello@cookingwithjaque.com?subject=' + subject + '&body=' + body;
+      window.location.href = 'mailto:hello@chefjackie.com?subject=' + subject + '&body=' + body;
       note.textContent = 'Opening your email app — hit send and I’ll reply within 24 hours.';
       form.reset();
     });

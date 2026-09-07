@@ -1,4 +1,4 @@
-# Cooking with Jaque
+# Chef Jackie
 
 Marketing site for a Brazilian personal chef in Los Angeles, with a filterable
 **nutrition gallery** — every dish shows calories and a protein / carb / fat
@@ -48,7 +48,7 @@ Dishes live in the `DISHES` array at the top of `assets/main.js`:
 
 Drop a file into `assets/img/` and add `img: 'moqueca.jpg'` to that dish. If the
 file is missing the card falls back to the gradient, so nothing breaks
-mid-shoot. The About portrait works the same way — add `assets/img/jaque.jpg`.
+mid-shoot. The About portrait works the same way — add `assets/img/jackie.jpg`.
 
 ## Before going live
 
