@@ -1,4 +1,4 @@
-# Meals by Chef Jackie
+# Chef Jackie
 
 Marketing site for Jaqueline "Jackie" Wheeler, a Brazilian personal chef based in
 Santa Monica, with a filterable **menu and nutrition gallery** — every dish shows calories and a protein / carb / fat
