@@ -1,4 +1,4 @@
-/* Chef Jackie — site interactions */
+/* Meals by Chef Jackie — site interactions */
 (function () {
   'use strict';
 
@@ -9,69 +9,65 @@
      Cards fall back to the illustrated gradient if the file is missing.
   --------------------------------------------------------------- */
   var DISHES = [
-    { name: 'Moqueca de Peixe', pt: 'Bahian coconut fish stew', emoji: '🍲',
-      desc: 'Sea bass simmered in coconut milk, dendê, peppers and lime. Served over a small scoop of jasmine rice.',
-      kcal: 512, p: 41, c: 18, f: 30, tags: ['high-protein', 'gluten-free', 'classic'], grad: ['#e8813f', '#c9613f'] },
+    { name: 'Stuffed Bell Peppers', pt: 'Peppers, seasoned beef & rice, baked', emoji: '🫑',
+      img: 'stuffed-peppers.jpg',
+      desc: 'Red and yellow peppers filled with seasoned beef and rice, baked until the tops brown. Reheats better than almost anything else I make.',
+      kcal: 385, p: 28, c: 26, f: 18, tags: ['high-protein', 'gluten-free', 'family'], grad: ['#d8642a', '#a83c17'] },
 
-    { name: 'Frango Grelhado com Farofa de Quinoa', pt: 'Grilled chicken, quinoa farofa', emoji: '🍗',
-      desc: 'Marinated chicken thigh over toasted quinoa farofa with couve and a squeeze of orange.',
-      kcal: 468, p: 45, c: 34, f: 15, tags: ['high-protein', 'gluten-free'], grad: ['#a8c957', '#2f7d55'] },
+    { name: 'Eggplant Parmesan Boats', pt: 'Roasted eggplant, tomato, mozzarella', emoji: '🍆',
+      img: 'eggplant.jpg',
+      desc: 'Halved eggplant roasted soft, layered with tomato and melted mozzarella, finished with parsley.',
+      kcal: 310, p: 18, c: 20, f: 17, tags: ['veg', 'gluten-free', 'family'], grad: ['#6b4a8f', '#33224a'] },
 
-    { name: 'Feijoada Leve', pt: 'Lighter black bean stew', emoji: '🥘',
-      desc: 'Sunday feijoada rebuilt with lean pork loin and turkey sausage. Same depth, half the fat.',
-      kcal: 540, p: 38, c: 48, f: 20, tags: ['high-protein', 'classic'], grad: ['#3d2a20', '#14301f'] },
+    { name: 'Beef & Potato Stir-Fry', pt: 'Steak strips, peanuts, scallion', emoji: '🥩',
+      img: 'beef-stirfry.jpg',
+      desc: 'Steak strips seared with potatoes, carrots and zucchini, tossed with peanuts and fresh scallion.',
+      kcal: 470, p: 34, c: 32, f: 22, tags: ['high-protein', 'gluten-free', 'family'], grad: ['#a8541f', '#5c2a10'] },
 
-    { name: 'Picanha com Chimichurri', pt: 'Grilled picanha, herb sauce', emoji: '🥩',
-      desc: 'Coarse-salt picanha sliced against the grain, charred cherry tomatoes, no starch on the plate.',
-      kcal: 495, p: 44, c: 5, f: 33, tags: ['high-protein', 'low-carb', 'gluten-free', 'classic'], grad: ['#c9613f', '#7a2f22'] },
+    { name: 'Chicken Pasta Salad', pt: 'Cold pasta, chicken, peas, herbs', emoji: '🥗',
+      img: 'pasta-salad.jpg',
+      desc: 'Cold pasta with shredded chicken, peas and scallion in a light dressing. A good lunch to take out the door.',
+      kcal: 420, p: 30, c: 40, f: 15, tags: ['high-protein', 'family'], grad: ['#c9a24a', '#8a6a22'] },
 
-    { name: 'Strogonoff de Frango Low Carb', pt: 'Chicken stroganoff, cauliflower rice', emoji: '🍛',
-      desc: 'Creamy chicken stroganoff built on cashew cream instead of heavy cream, over cauliflower rice.',
-      kcal: 410, p: 42, c: 12, f: 22, tags: ['high-protein', 'low-carb', 'gluten-free'], grad: ['#f2c14e', '#c9613f'] },
+    { name: 'Grilled Chicken & Roasted Vegetables', pt: 'Simple, seasonal, endlessly repeatable', emoji: '🍗',
+      desc: 'Marinated chicken breast with whatever is best that week — squash, broccolini, peppers — roasted hard.',
+      kcal: 445, p: 46, c: 18, f: 20, tags: ['high-protein', 'low-carb', 'gluten-free'], grad: ['#3a6553', '#12241d'] },
 
-    { name: 'Salmão com Purê de Mandioquinha', pt: 'Salmon, Peruvian potato purée', emoji: '🐟',
-      desc: 'Seared salmon on silky mandioquinha purée with grilled asparagus and lemon oil.',
-      kcal: 520, p: 40, c: 30, f: 26, tags: ['high-protein', 'gluten-free'], grad: ['#f0a08a', '#c9613f'] },
+    { name: 'Salmon, Quinoa & Greens', pt: 'Seared salmon, lemon, herbs', emoji: '🐟',
+      desc: 'Seared salmon over quinoa with sautéed greens and lemon. The dish clients ask me to put back on every month.',
+      kcal: 505, p: 38, c: 32, f: 24, tags: ['high-protein', 'gluten-free'], grad: ['#e08a6a', '#a8451f'] },
 
-    { name: 'Bobó de Camarão', pt: 'Shrimp in yuca cream', emoji: '🦐',
-      desc: 'Gulf shrimp folded into a velvety yuca and coconut base, finished with cilantro and dendê.',
-      kcal: 465, p: 33, c: 34, f: 22, tags: ['gluten-free', 'classic'], grad: ['#f2c14e', '#e8813f'] },
+    { name: 'Feijão com Arroz', pt: 'Brazilian black beans and rice', emoji: '🫘',
+      desc: 'The plate I grew up on. Slow-cooked black beans with garlic and bay, over rice. Nothing complicated, nothing left over.',
+      kcal: 390, p: 17, c: 62, f: 7, tags: ['veg', 'gluten-free', 'family'], grad: ['#3d2a20', '#12241d'] },
 
-    { name: 'Escondidinho de Abóbora', pt: 'Squash & shredded beef bake', emoji: '🥧',
-      desc: 'Roasted kabocha purée over slow-shredded carne seca, browned under the broiler.',
-      kcal: 430, p: 32, c: 40, f: 15, tags: ['high-protein', 'gluten-free', 'classic'], grad: ['#e8a33f', '#a8541f'] },
+    { name: 'Turkey Meatballs in Tomato Sugo', pt: 'Slow tomato sauce, basil', emoji: '🍅',
+      desc: 'Turkey meatballs simmered in tomato sugo. Serve over pasta for the kids, over greens for everyone else.',
+      kcal: 380, p: 35, c: 16, f: 20, tags: ['high-protein', 'low-carb', 'gluten-free', 'family'], grad: ['#c2452a', '#7a2114'] },
 
-    { name: 'Tapioca de Frango', pt: 'Tapioca crêpe, chicken & requeijão', emoji: '🌯',
-      desc: 'Warm tapioca crêpe filled with shredded chicken, light requeijão and rocket. Breakfast or post-training.',
-      kcal: 355, p: 32, c: 36, f: 8, tags: ['high-protein', 'gluten-free'], grad: ['#f6efe0', '#d9c9a3'] },
+    { name: 'Chicken Pesto & Zucchini Noodles', pt: 'Herb pesto, spiralized zucchini', emoji: '🌿',
+      desc: 'Grilled chicken with basil pesto over zucchini noodles. Light, and it holds up three days in the fridge.',
+      kcal: 355, p: 33, c: 12, f: 20, tags: ['high-protein', 'low-carb', 'gluten-free'], grad: ['#4f8b46', '#22421f'] },
 
-    { name: 'Feijão Tropeiro Vegano', pt: 'Plant-based tropeiro beans', emoji: '🫘',
-      desc: 'Beans, smoked tofu, collards and cassava farofa. All the smoke, none of the pork.',
-      kcal: 410, p: 19, c: 55, f: 12, tags: ['vegan', 'classic'], grad: ['#5b8c3f', '#1d5137'] },
+    { name: 'Roasted Vegetable & Chickpea Bowl', pt: 'Seasonal vegetables, tahini', emoji: '🥕',
+      desc: 'Whatever roasts well that week with chickpeas, herbs and a lemon-tahini dressing.',
+      kcal: 400, p: 16, c: 48, f: 16, tags: ['veg', 'gluten-free'], grad: ['#d99a3c', '#8a5511'] },
 
-    { name: 'Salada de Palmito e Grão-de-Bico', pt: 'Heart of palm & chickpea salad', emoji: '🥗',
-      desc: 'Hearts of palm, chickpeas, mango, red onion and mint in a passion fruit vinaigrette.',
-      kcal: 380, p: 15, c: 42, f: 17, tags: ['vegan', 'gluten-free'], grad: ['#a8c957', '#4e8c4a'] },
+    { name: 'Garlic Lime Shrimp', pt: 'Shrimp, cauliflower rice, cilantro', emoji: '🦐',
+      desc: 'Shrimp cooked fast with garlic, lime and cilantro over cauliflower rice.',
+      kcal: 330, p: 34, c: 11, f: 15, tags: ['high-protein', 'low-carb', 'gluten-free'], grad: ['#f0a08a', '#c2452a'] },
 
-    { name: 'Açaí Bowl Proteico', pt: 'Protein açaí bowl', emoji: '🫐',
-      desc: 'Unsweetened açaí blended with banana and plant protein, topped with granola and cacao nibs.',
-      kcal: 340, p: 24, c: 45, f: 8, tags: ['vegan', 'gluten-free'], grad: ['#6b4a8f', '#2e1b4d'] },
-
-    { name: 'Pão de Queijo', pt: 'Cheese bread · 2 pieces', emoji: '🧀',
-      desc: 'Tapioca-flour cheese bread baked to order. The one thing nobody lets me take off the menu.',
-      kcal: 190, p: 7, c: 18, f: 10, tags: ['gluten-free', 'classic'], grad: ['#f2c14e', '#e0a33f'] },
-
-    { name: 'Brigadeiro de Castanha', pt: 'Cashew brigadeiro · 2 pieces', emoji: '🍫',
-      desc: 'Dates, cashew butter and 70% cacao rolled by hand. Dessert that does not undo the week.',
-      kcal: 145, p: 3, c: 16, f: 8, tags: ['vegan', 'gluten-free'], grad: ['#5b3a29', '#2b1a12'] }
+    { name: 'Overnight Oats with Fruit', pt: 'Breakfast, ready in the fridge', emoji: '🥣',
+      desc: 'Oats soaked with milk or a plant alternative, topped with seasonal fruit. Made in jars so mornings take ten seconds.',
+      kcal: 320, p: 14, c: 46, f: 9, tags: ['veg', 'family'], grad: ['#c9b18a', '#8a7048'] }
   ];
 
   var TAG_LABELS = {
     'high-protein': 'High protein',
     'low-carb': 'Low carb',
-    'vegan': 'Plant-based',
+    'veg': 'Vegetarian',
     'gluten-free': 'Gluten free',
-    'classic': 'Classic'
+    'family': 'Family favorite'
   };
 
   /* ---------------- gallery rendering ---------------- */
@@ -95,7 +91,8 @@
 
     var split = macroSplit(d);
     var media = d.img
-      ? '<img src="assets/img/' + d.img + '" alt="' + d.name + '" loading="lazy" onerror="this.remove()">'
+      ? '<img src="assets/img/' + d.img + '" alt="' + d.name + '" loading="lazy" onerror="this.remove()">' +
+        '<span class="dish-real">Jackie\'s kitchen</span>'
       : '';
 
     el.innerHTML =
@@ -234,7 +231,7 @@
         'Service: ' + document.getElementById('service').value + '\n\n' +
         document.getElementById('notes').value.trim()
       );
-      window.location.href = 'mailto:hello@chefjackie.com?subject=' + subject + '&body=' + body;
+      window.location.href = 'mailto:jaquelvalenca@icloud.com?subject=' + subject + '&body=' + body;
       note.textContent = 'Opening your email app — hit send and I’ll reply within 24 hours.';
       form.reset();
     });
