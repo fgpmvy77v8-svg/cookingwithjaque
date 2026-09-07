@@ -2,112 +2,16 @@
 (function () {
   'use strict';
 
-  /* ---------------------------------------------------------------
-     Menu data. Macros are estimates per serving (see the note under
-     the gallery). To use a real photo, drop a file in assets/img/ and
-     set `img` on the dish; cards fall back to the illustrated tile.
-  --------------------------------------------------------------- */
-  var DISHES = [
-
-    { img: 'stuffed-peppers.jpg', emoji: '🫑', kcal: 385, p: 28, c: 26, f: 18,
-      tags: ['high-protein', 'gluten-free', 'family'],
-      en: { name: 'Stuffed Bell Peppers', sub: 'Peppers, seasoned beef & rice, baked',
-            desc: 'Red and yellow peppers filled with seasoned beef and rice, baked until the tops brown. Reheats better than almost anything else I make.' },
-      pt: { name: 'Pimentões Recheados', sub: 'Pimentão, carne temperada e arroz, ao forno',
-            desc: 'Pimentões vermelhos e amarelos recheados com carne temperada e arroz, assados até dourar por cima. Reaquece melhor que quase tudo que eu faço.' },
-      grad: ['#d8642a', '#a83c17'] },
-
-    { img: 'eggplant.jpg', emoji: '🍆', kcal: 310, p: 18, c: 20, f: 17,
-      tags: ['veg', 'gluten-free', 'family'],
-      en: { name: 'Eggplant Parmesan Boats', sub: 'Roasted eggplant, tomato, mozzarella',
-            desc: 'Halved eggplant roasted soft, layered with tomato and melted mozzarella, finished with parsley.' },
-      pt: { name: 'Berinjela à Parmegiana', sub: 'Berinjela assada, tomate, mussarela',
-            desc: 'Berinjela cortada ao meio e assada até ficar macia, com tomate e mussarela derretida, finalizada com salsinha.' },
-      grad: ['#6b4a8f', '#33224a'] },
-
-    { img: 'beef-stirfry.jpg', emoji: '🥩', kcal: 470, p: 34, c: 32, f: 22,
-      tags: ['high-protein', 'gluten-free', 'family'],
-      en: { name: 'Beef & Potato Stir-Fry', sub: 'Steak strips, peanuts, scallion',
-            desc: 'Steak strips seared with potatoes, carrots and zucchini, tossed with peanuts and fresh scallion.' },
-      pt: { name: 'Carne Salteada com Batata', sub: 'Tiras de carne, amendoim, cebolinha',
-            desc: 'Tiras de carne seladas com batata, cenoura e abobrinha, finalizadas com amendoim e cebolinha fresca.' },
-      grad: ['#a8541f', '#5c2a10'] },
-
-    { img: 'pasta-salad.jpg', emoji: '🥗', kcal: 420, p: 30, c: 40, f: 15,
-      tags: ['high-protein', 'family'],
-      en: { name: 'Chicken Pasta Salad', sub: 'Cold pasta, chicken, peas, herbs',
-            desc: 'Cold pasta with shredded chicken, peas and scallion in a light dressing. A good lunch to take out the door.' },
-      pt: { name: 'Salpicão de Frango com Macarrão', sub: 'Macarrão frio, frango, ervilha, ervas',
-            desc: 'Macarrão frio com frango desfiado, ervilha e cebolinha em molho leve. Um bom almoço para levar.' },
-      grad: ['#c9a24a', '#8a6a22'] },
-
-    { emoji: '🍗', kcal: 445, p: 46, c: 18, f: 20,
-      tags: ['high-protein', 'low-carb', 'gluten-free'],
-      en: { name: 'Grilled Chicken & Roasted Vegetables', sub: 'Simple, seasonal, endlessly repeatable',
-            desc: 'Marinated chicken breast with whatever is best that week — squash, broccolini, peppers — roasted hard.' },
-      pt: { name: 'Frango Grelhado com Legumes Assados', sub: 'Simples, da estação, nunca enjoa',
-            desc: 'Peito de frango marinado com o que estiver melhor na semana — abóbora, brócolis, pimentão — bem assados.' },
-      grad: ['#3a6553', '#12241d'] },
-
-    { emoji: '🐟', kcal: 505, p: 38, c: 32, f: 24,
-      tags: ['high-protein', 'gluten-free'],
-      en: { name: 'Salmon, Quinoa & Greens', sub: 'Seared salmon, lemon, herbs',
-            desc: 'Seared salmon over quinoa with sautéed greens and lemon. The dish clients ask me to put back on every month.' },
-      pt: { name: 'Salmão com Quinoa e Verduras', sub: 'Salmão selado, limão, ervas',
-            desc: 'Salmão selado sobre quinoa com verduras refogadas e limão. O prato que os clientes pedem de volta todo mês.' },
-      grad: ['#e08a6a', '#a8451f'] },
-
-    { emoji: '🫘', kcal: 390, p: 17, c: 62, f: 7,
-      tags: ['veg', 'gluten-free', 'brazilian', 'family'],
-      en: { name: 'Feijão com Arroz', sub: 'Brazilian black beans and rice',
-            desc: 'The plate I grew up on. Slow-cooked black beans with garlic and bay, over rice. Nothing complicated, nothing left over.' },
-      pt: { name: 'Feijão com Arroz', sub: 'Feijão preto e arroz, do jeito brasileiro',
-            desc: 'O prato em que eu cresci. Feijão preto cozido devagar com alho e louro, sobre arroz. Nada complicado, e nunca sobra.' },
-      grad: ['#3d2a20', '#12241d'] },
-
-    { emoji: '🥥', kcal: 480, p: 36, c: 20, f: 28,
-      tags: ['high-protein', 'gluten-free', 'brazilian'],
-      en: { name: 'Moqueca de Peixe', sub: 'Bahian coconut fish stew',
-            desc: 'White fish simmered with coconut milk, peppers, tomato and lime. Brazil in one pot, and it travels well to a dinner party.' },
-      pt: { name: 'Moqueca de Peixe', sub: 'Moqueca baiana com leite de coco',
-            desc: 'Peixe branco cozido com leite de coco, pimentão, tomate e limão. O Brasil numa panela só — e ótima para um jantar.' },
-      grad: ['#e8a33f', '#c2452a'] },
-
-    { emoji: '🍅', kcal: 380, p: 35, c: 16, f: 20,
-      tags: ['high-protein', 'low-carb', 'gluten-free', 'family'],
-      en: { name: 'Turkey Meatballs in Tomato Sugo', sub: 'Slow tomato sauce, basil',
-            desc: 'Turkey meatballs simmered in tomato sugo. Serve over pasta for the kids, over greens for everyone else.' },
-      pt: { name: 'Almôndegas de Peru ao Sugo', sub: 'Molho de tomate lento, manjericão',
-            desc: 'Almôndegas de peru cozidas no molho de tomate. Com macarrão para as crianças, com folhas para os adultos.' },
-      grad: ['#c2452a', '#7a2114'] },
-
-    { emoji: '🍫', kcal: 145, p: 3, c: 20, f: 6,
-      tags: ['dessert', 'brazilian', 'veg', 'gluten-free', 'family'],
-      en: { name: 'Brigadeiro', sub: 'The Brazilian chocolate truffle',
-            desc: 'Rolled by hand the way every Brazilian birthday requires. Two pieces, and nobody asks for anything else.' },
-      pt: { name: 'Brigadeiro', sub: 'O docinho brasileiro de sempre',
-            desc: 'Enrolado à mão, como todo aniversário brasileiro exige. Dois docinhos e ninguém pede mais nada.' },
-      grad: ['#5b3a29', '#2b1a12'] },
-
-    { emoji: '🍮', kcal: 265, p: 7, c: 38, f: 9,
-      tags: ['dessert', 'brazilian', 'veg', 'gluten-free'],
-      en: { name: 'Pudim de Leite', sub: 'Brazilian caramel flan',
-            desc: 'Condensed milk flan with a dark caramel top. Made the night before, because it needs to sit.' },
-      pt: { name: 'Pudim de Leite', sub: 'Pudim de leite condensado com calda',
-            desc: 'Pudim de leite condensado com calda escura. Feito na véspera, porque precisa descansar.' },
-      grad: ['#e0a940', '#a06a12'] }
-  ];
-
   /* ---------------- translations (English lives in the HTML) ---------------- */
   var PT = {
     'skip': 'Pular para o conteúdo',
     'nav.about': 'Sobre a Jackie', 'nav.services': 'O que está incluído',
-    'nav.menu': 'Cardápio e nutrição', 'nav.contact': 'Fale comigo',
+    'nav.menu': 'A comida', 'nav.contact': 'Fale comigo',
 
     'hero.eyebrow': 'Chef particular · Santa Monica',
     'hero.h1': 'A comida fresca e saudável da sua família — feita na <em>sua</em> cozinha.',
     'hero.lede': 'Comida brasileira, o clássico americano do dia a dia, e comida que as crianças comem de verdade. Eu planejo a semana do jeito que a sua casa come, faço as compras na manhã do dia, cozinho na sua cozinha e deixo tudo porcionado, etiquetado e guardado.',
-    'hero.call': 'Ligue (310) 425-6872', 'hero.menu': 'Ver o cardápio',
+    'hero.call': 'Ligue (310) 425-6872', 'hero.menu': 'Ver a comida',
     'hero.s1t': 'Bacharel em Nutrição', 'hero.s1d': 'Ciência de Alimentos e Nutrição, São Paulo, Brasil',
     'hero.s2t': 'Na sua cozinha', 'hero.s2d': 'Feito na hora, não entregue pronto',
     'hero.s3t': 'LA e Orange County', 'hero.s3d': 'Casas particulares e eventos',
@@ -127,15 +31,17 @@
     'about.c1b': 'Cardápios adaptados a restrições, alergias e preferências',
     'about.c2': 'Tudo porcionado em potes individuais e etiquetado',
     'about.c3': 'Acompanho a geladeira e a despensa para desperdiçar menos',
-    'about.c4': 'Cursando formação complementar em cozinha vegana',
+    'about.c4': 'Formada em cozinha vegana e licenciada em manipulação de alimentos',
 
     'cred.eyebrow': 'Formação', 'cred.h2': 'De onde vem a parte nutricional',
     'cred.1t': 'Bacharel em Ciência de Alimentos e Nutrição',
     'cred.1d': 'Universidade Anhembi Morumbi, São Paulo, Brasil',
     'cred.2y': 'Curso', 'cred.2t': 'Gestão da Qualidade e Controle de Higiene',
     'cred.2d': 'Manipulação, armazenamento e rotulagem seguros em cozinha doméstica',
-    'cred.3y': 'Em andamento', 'cred.3t': 'Cozinha Vegana',
-    'cred.3d': 'Cursando agora — cardápios vegetais sem achismo',
+    'cred.3y': 'Concluído', 'cred.3t': 'Cozinha Vegana',
+    'cred.3d': 'Cardápios vegetais sem achismo',
+    'cred.5y': 'Licenciada', 'cred.5t': 'Licença de Manipulação de Alimentos',
+    'cred.5d': 'Certificada em manipulação, armazenamento e preparo seguros',
     'cred.4y': 'Também', 'cred.4t': 'Vinho e café',
     'cred.4d': 'Del Vino Wine Club School · Best Coffee Xperience, barista',
 
@@ -162,14 +68,8 @@
     'svc.3c': 'Informação nutricional de qualquer prato, quando pedir',
     'svc.3d': 'Produtos da estação e orgânicos onde faz diferença',
 
-    'menu.eyebrow': 'Cardápio e nutrição', 'menu.h2': 'Uma semana de exemplo, com os números',
-    'menu.lede': 'Alguns pratos que eu faço com frequência, brasileiros e americanos. A sua semana é montada em cima do que a sua família gosta — isto aqui é só uma amostra. Cada prato mostra o que tem em uma porção.',
-    'menu.empty': 'Nada corresponde a esse filtro — tente outro.',
-    'menu.fineprint': '<strong>Sobre estes números:</strong> os valores nutricionais são estimativas por porção, calculadas a partir de pesos de receita padrão e arredondadas. Suas porções exatas são definidas quando planejamos a sua semana, e a Jackie fornece valores precisos e a lista completa de ingredientes de qualquer prato que ela cozinhar para você.',
-
-    'filter.all': 'Tudo', 'filter.high-protein': 'Rico em proteína', 'filter.low-carb': 'Baixo carboidrato',
-    'filter.veg': 'Vegetariano', 'filter.brazilian': 'Brasileiro', 'filter.dessert': 'Sobremesas',
-    'filter.family': 'As crianças amam',
+    'food.eyebrow': 'A comida', 'food.h2': 'Das cozinhas dela neste mês',
+    'food.lede': 'Cada semana é montada em cima do que a sua família come de verdade, então nenhuma é igual à outra. Aqui está um pouco do que saiu das cozinhas dos clientes ultimamente.',
 
     'how.eyebrow': 'Como funciona', 'how.h2': 'Da primeira ligação à geladeira cheia',
     'how.1t': 'A gente conversa', 'how.1p': 'Quantas pessoas, do que gostam, o que não podem comer, quais dias pesam mais.',
@@ -192,104 +92,11 @@
     'form.ph': 'Quantas pessoas, alergias ou restrições, seu bairro…', 'form.send': 'Enviar',
 
     'footer.tag': 'Chef particular · Santa Monica, Los Angeles e Orange County',
-    'footer.about': 'Sobre', 'footer.svc': 'O que está incluído', 'footer.menu': 'Cardápio',
+    'footer.about': 'Sobre', 'footer.svc': 'O que está incluído', 'footer.menu': 'A comida',
     'footer.love': 'Feito com carinho.'
   };
 
-  var TAG_LABELS = {
-    en: { 'high-protein': 'High protein', 'low-carb': 'Low carb', 'veg': 'Vegetarian',
-          'gluten-free': 'Gluten free', 'brazilian': 'Brazilian', 'dessert': 'Dessert',
-          'family': 'Kid favorite' },
-    pt: { 'high-protein': 'Rico em proteína', 'low-carb': 'Baixo carboidrato', 'veg': 'Vegetariano',
-          'gluten-free': 'Sem glúten', 'brazilian': 'Brasileiro', 'dessert': 'Sobremesa',
-          'family': 'Favorito das crianças' }
-  };
-
-  var MACRO_LABELS = {
-    en: { p: 'Protein', c: 'Carbs', f: 'Fat', mine: "Jackie's kitchen" },
-    pt: { p: 'Proteína', c: 'Carboidrato', f: 'Gordura', mine: 'Cozinha da Jackie' }
-  };
-
   var lang = 'en';
-  var grid = document.getElementById('galleryGrid');
-  var empty = document.getElementById('galleryEmpty');
-  var activeFilter = 'all';
-
-  /* ---------------- gallery ---------------- */
-  function macroSplit(d) {
-    var pk = d.p * 4, ck = d.c * 4, fk = d.f * 9;
-    var total = pk + ck + fk || 1;
-    return { p: Math.round(pk / total * 100), c: Math.round(ck / total * 100), f: Math.round(fk / total * 100) };
-  }
-
-  function buildCard(d) {
-    var el = document.createElement('article');
-    el.className = 'dish reveal';
-    el.dataset.tags = d.tags.join(' ');
-
-    var t = d[lang];
-    var split = macroSplit(d);
-    var ml = MACRO_LABELS[lang];
-    var media = d.img
-      ? '<img src="assets/img/' + d.img + '" alt="' + t.name + '" loading="lazy" onerror="this.remove()">' +
-        '<span class="dish-real">' + ml.mine + '</span>'
-      : '';
-
-    el.innerHTML =
-      '<div class="dish-media" style="background:linear-gradient(150deg,' + d.grad[0] + ',' + d.grad[1] + ')">' +
-        media +
-        '<span aria-hidden="true">' + d.emoji + '</span>' +
-        '<span class="dish-kcal">' + d.kcal + ' kcal</span>' +
-      '</div>' +
-      '<div class="dish-body">' +
-        '<h3>' + t.name + '</h3>' +
-        '<p class="dish-pt">' + t.sub + '</p>' +
-        '<p class="dish-desc">' + t.desc + '</p>' +
-        '<div class="macros">' +
-          '<div class="macro"><b>' + d.p + 'g</b><span>' + ml.p + '</span></div>' +
-          '<div class="macro"><b>' + d.c + 'g</b><span>' + ml.c + '</span></div>' +
-          '<div class="macro"><b>' + d.f + 'g</b><span>' + ml.f + '</span></div>' +
-        '</div>' +
-        '<div class="macro-bar" role="img" aria-label="' + ml.p + ' ' + split.p + '%, ' +
-          ml.c + ' ' + split.c + '%, ' + ml.f + ' ' + split.f + '%">' +
-          '<i class="mb-p" style="width:' + split.p + '%"></i>' +
-          '<i class="mb-c" style="width:' + split.c + '%"></i>' +
-          '<i class="mb-f" style="width:' + split.f + '%"></i>' +
-        '</div>' +
-        '<ul class="dish-tags">' +
-          d.tags.map(function (tag) { return '<li>' + (TAG_LABELS[lang][tag] || tag) + '</li>'; }).join('') +
-        '</ul>' +
-      '</div>';
-    return el;
-  }
-
-  function renderGallery() {
-    if (!grid) { return; }
-    grid.innerHTML = '';
-    var frag = document.createDocumentFragment();
-    DISHES.forEach(function (d) { frag.appendChild(buildCard(d)); });
-    grid.appendChild(frag);
-    applyFilter(activeFilter);
-  }
-
-  function applyFilter(filter) {
-    activeFilter = filter;
-    var shown = 0;
-    grid.querySelectorAll('.dish').forEach(function (card) {
-      var match = filter === 'all' || card.dataset.tags.split(' ').indexOf(filter) > -1;
-      card.classList.toggle('is-hidden', !match);
-      if (match) { shown++; }
-    });
-    if (empty) { empty.hidden = shown > 0; }
-  }
-
-  document.querySelectorAll('.chip').forEach(function (chip) {
-    chip.addEventListener('click', function () {
-      document.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('is-active'); });
-      chip.classList.add('is-active');
-      applyFilter(chip.dataset.filter);
-    });
-  });
 
   /* ---------------- language ---------------- */
   function setLang(next) {
@@ -312,7 +119,6 @@
     });
 
     try { localStorage.setItem('cj-lang', lang); } catch (err) { /* private mode */ }
-    renderGallery();
   }
 
   document.querySelectorAll('.lang button').forEach(function (b) {
