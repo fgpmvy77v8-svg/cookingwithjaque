@@ -195,7 +195,7 @@ p{margin:0 0 1.1em}
 
 /* ---------- food photos ---------- */
 .photos{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;
 }
 .photos figure{margin:0;border-radius:var(--radius);overflow:hidden;background:var(--paper-2);aspect-ratio:3/4}
 .photos img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.22,.7,.3,1)}
